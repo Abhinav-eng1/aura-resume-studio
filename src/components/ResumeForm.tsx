@@ -76,7 +76,6 @@ export default function ResumeForm() {
   const updateCert = (id: string, field: string, value: string) => update('certifications', certifications.map(c => c.id === id ? { ...c, [field]: value } : c));
   const removeCert = (id: string) => update('certifications', certifications.filter(c => c.id !== id));
 
-  const [skillInput, setSkillInput] = useState('');
   const addSkill = () => {
     const s = skillInput.trim();
     if (s && !skills.includes(s)) { update('skills', [...skills, s]); setSkillInput(''); }
