@@ -34,6 +34,7 @@ function FormField({ label, value, onChange, type = 'text', placeholder = '', mu
 export default function ResumeForm() {
   const { currentResume, updateResume } = useResume();
   const [openSection, setOpenSection] = useState<string | null>('personal');
+  const [skillInput, setSkillInput] = useState('');
 
   if (!currentResume) return null;
   const { personal, education, experience, skills, projects, certifications } = currentResume;
