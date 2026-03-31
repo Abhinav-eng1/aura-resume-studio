@@ -400,10 +400,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="border-t border-border/50 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} ResumeForge. All rights reserved.</p>
-            <p className="text-sm text-muted-foreground">Built with ❤️ using React & TypeScript</p>
-          </div>
+          <div className="border-t border-border/50 mt-10 pt-6" />
         </div>
       </footer>
     </div>
