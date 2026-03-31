@@ -48,11 +48,6 @@ export default function CreateResumePage() {
       <div className="no-print flex items-center justify-between px-5 py-3 border-b border-border/50 bg-card/50 backdrop-blur-sm">
         <div className="flex items-center gap-3">
           <h2 className="font-heading font-semibold text-foreground text-sm">{currentResume.title || 'Untitled'}</h2>
-          <div className="flex items-center gap-1 text-xs text-muted-foreground">
-            {saveStatus === 'saved' && <><Check className="w-3 h-3 text-success" /> Saved</>}
-            {saveStatus === 'saving' && <><Loader2 className="w-3 h-3 animate-spin" /> Saving...</>}
-            {saveStatus === 'unsaved' && <span className="text-warning">Unsaved</span>}
-          </div>
         </div>
         <div className="flex items-center gap-2">
           {/* Template selector */}
