@@ -98,7 +98,7 @@ export default function ResumeForm() {
         />
       </div>
 
-      <Section id="personal" title="Personal Information">
+      <Section id="personal" title="Personal Information" openSection={openSection} toggleSection={toggleSection}>
         <div className="grid grid-cols-2 gap-3">
           <div className="col-span-2"><FormField label="Full Name" value={personal.fullName} onChange={v => updatePersonal('fullName', v)} placeholder="John Doe" /></div>
           <FormField label="Email" value={personal.email} onChange={v => updatePersonal('email', v)} type="email" placeholder="john@example.com" />
@@ -111,7 +111,7 @@ export default function ResumeForm() {
         <FormField label="Professional Summary" value={personal.summary} onChange={v => updatePersonal('summary', v)} multiline placeholder="Brief summary of your experience..." />
       </Section>
 
-      <Section id="experience" title="Experience" count={experience.length}>
+      <Section id="experience" title="Experience" count={experience.length} openSection={openSection} toggleSection={toggleSection}>
         {experience.map((exp, i) => (
           <div key={exp.id} className="border border-border/50 rounded-lg p-3 space-y-3">
             <div className="flex justify-between items-center">
@@ -135,7 +135,7 @@ export default function ResumeForm() {
         </button>
       </Section>
 
-      <Section id="education" title="Education" count={education.length}>
+      <Section id="education" title="Education" count={education.length} openSection={openSection} toggleSection={toggleSection}>
         {education.map((edu, i) => (
           <div key={edu.id} className="border border-border/50 rounded-lg p-3 space-y-3">
             <div className="flex justify-between items-center">
@@ -157,7 +157,7 @@ export default function ResumeForm() {
         </button>
       </Section>
 
-      <Section id="skills" title="Skills" count={skills.length}>
+      <Section id="skills" title="Skills" count={skills.length} openSection={openSection} toggleSection={toggleSection}>
         <div className="flex gap-2">
           <input
             value={skillInput}
@@ -178,7 +178,7 @@ export default function ResumeForm() {
         </div>
       </Section>
 
-      <Section id="projects" title="Projects" count={projects.length}>
+      <Section id="projects" title="Projects" count={projects.length} openSection={openSection} toggleSection={toggleSection}>
         {projects.map((proj, i) => (
           <div key={proj.id} className="border border-border/50 rounded-lg p-3 space-y-3">
             <div className="flex justify-between items-center">
@@ -196,7 +196,7 @@ export default function ResumeForm() {
         </button>
       </Section>
 
-      <Section id="certifications" title="Certifications" count={certifications.length}>
+      <Section id="certifications" title="Certifications" count={certifications.length} openSection={openSection} toggleSection={toggleSection}>
         {certifications.map((cert, i) => (
           <div key={cert.id} className="border border-border/50 rounded-lg p-3 space-y-3">
             <div className="flex justify-between items-center">
