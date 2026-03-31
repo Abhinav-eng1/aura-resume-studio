@@ -9,7 +9,6 @@ const features = [
   { icon: Eye, title: 'Live Preview', desc: 'See every change reflected instantly as you type. No more guessing how your resume will look.' },
   { icon: Download, title: 'PDF Export', desc: 'Download your polished resume as a high-quality PDF, ready to submit to any employer.' },
   { icon: Palette, title: 'Template Switching', desc: 'Seamlessly switch between templates with smooth animations. Find the perfect style for you.' },
-  { icon: Shield, title: 'Auto-Save', desc: 'Never lose your progress. Every edit is automatically saved with a visual confirmation.' },
   { icon: Zap, title: 'Fast & Intuitive', desc: 'Built for speed and simplicity. Create a professional resume in under 10 minutes.' },
 ];
 
