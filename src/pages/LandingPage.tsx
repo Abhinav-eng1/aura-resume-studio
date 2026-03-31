@@ -121,10 +121,6 @@ export default function LandingPage() {
           transition={{ duration: 0.7 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/60 text-accent-foreground text-sm font-medium mb-8 border border-border/50">
-            <Sparkles className="w-4 h-4" />
-            Build your professional resume in minutes
-          </div>
 
           <h1 className="font-heading font-extrabold text-5xl md:text-7xl text-foreground leading-tight mb-6">
             Craft Resumes
