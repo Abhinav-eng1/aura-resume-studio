@@ -31,20 +31,10 @@ function FormField({ label, value, onChange, type = 'text', placeholder = '', mu
   );
 }
 
-export default function ResumeForm() {
-  const { currentResume, updateResume } = useResume();
-  const [openSection, setOpenSection] = useState<string | null>('personal');
-  const [skillInput, setSkillInput] = useState('');
-
-  if (!currentResume) return null;
-  const { personal, education, experience, skills, projects, certifications } = currentResume;
-
-  const update = (field: string, value: any) => updateResume({ [field]: value });
-  const updatePersonal = (field: string, value: string) => update('personal', { ...personal, [field]: value });
-
-  const toggleSection = (s: string) => setOpenSection(prev => prev === s ? null : s);
-
-  const Section = ({ id, title, children, count = 0 }: { id: string; title: string; children: React.ReactNode; count?: number }) => (
+function Section({ id, title, children, count = 0, openSection, toggleSection }: { 
+  id: string; title: string; children: React.ReactNode; count?: number; openSection: string | null; toggleSection: (s: string) => void;
+}) {
+  return (
     <div className="glass-card rounded-xl overflow-hidden">
       <button onClick={() => toggleSection(id)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-accent/30 transition-colors">
         <h3 className="font-heading font-semibold text-foreground text-sm">{title} {count > 0 && <span className="text-muted-foreground font-normal">({count})</span>}</h3>
@@ -59,6 +49,20 @@ export default function ResumeForm() {
       </AnimatePresence>
     </div>
   );
+}
+
+export default function ResumeForm() {
+  const { currentResume, updateResume } = useResume();
+  const [openSection, setOpenSection] = useState<string | null>('personal');
+  const [skillInput, setSkillInput] = useState('');
+
+  if (!currentResume) return null;
+  const { personal, education, experience, skills, projects, certifications } = currentResume;
+
+  const update = (field: string, value: any) => updateResume({ [field]: value });
+  const updatePersonal = (field: string, value: string) => update('personal', { ...personal, [field]: value });
+
+  const toggleSection = (s: string) => setOpenSection(prev => prev === s ? null : s);
 
   const addEducation = () => update('education', [...education, { id: genId(), institution: '', degree: '', field: '', startDate: '', endDate: '', gpa: '', description: '' }]);
   const updateEducation = (id: string, field: string, value: string) => update('education', education.map(e => e.id === id ? { ...e, [field]: value } : e));
