@@ -9,7 +9,6 @@ const features = [
   { icon: Eye, title: 'Live Preview', desc: 'See every change reflected instantly as you type. No more guessing how your resume will look.' },
   { icon: Download, title: 'PDF Export', desc: 'Download your polished resume as a high-quality PDF, ready to submit to any employer.' },
   { icon: Palette, title: 'Template Switching', desc: 'Seamlessly switch between templates with smooth animations. Find the perfect style for you.' },
-  { icon: Shield, title: 'Auto-Save', desc: 'Never lose your progress. Every edit is automatically saved with a visual confirmation.' },
   { icon: Zap, title: 'Fast & Intuitive', desc: 'Built for speed and simplicity. Create a professional resume in under 10 minutes.' },
 ];
 
@@ -122,10 +121,6 @@ export default function LandingPage() {
           transition={{ duration: 0.7 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/60 text-accent-foreground text-sm font-medium mb-8 border border-border/50">
-            <Sparkles className="w-4 h-4" />
-            Build your professional resume in minutes
-          </div>
 
           <h1 className="font-heading font-extrabold text-5xl md:text-7xl text-foreground leading-tight mb-6">
             Craft Resumes
